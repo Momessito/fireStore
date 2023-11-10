@@ -92,6 +92,7 @@ function displayFiles() {
             item.getMetadata().then(metadata => {
               var fileContainer = document.createElement('div');
               fileContainer.classList.add('file-container'); // Adicionar a classe
+              fileContainer.classList.add('card'); // Adicionar a classe
 
               if (item.name.toLowerCase().endsWith('.jpg') || item.name.toLowerCase().endsWith('.jpeg') || item.name.toLowerCase().endsWith('.png')) {
                 // Se for uma imagem, exibir miniatura
@@ -111,6 +112,8 @@ function displayFiles() {
               // Adicione o botão de remoção
               var removeButton = document.createElement('button');
               removeButton.textContent = 'Remover';
+              removeButton.classList.add('btn'); // Adicionar a classe
+
               removeButton.addEventListener('click', function() {
                 removeFile(user.uid, item.name);
               });
